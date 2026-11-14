@@ -1,0 +1,979 @@
+var mandya = ee.Geometry.Rectangle([
+    76.7,
+    12.3,
+    77.1,
+    12.7
+]);
+
+var crops = ee.FeatureCollection([
+    // SUGARCANE (label 0) — paste your coordinates here
+  ee.Feature(ee.Geometry.Point([
+        76.89,
+        12.52
+    ]),
+    {label: 0, crop: 'Sugarcane'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.92,
+        12.49
+    ]),
+    {label: 0, crop: 'Sugarcane'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.88,
+        12.55
+    ]),
+    {label: 0, crop: 'Sugarcane'
+    }),
+    // add 7 more...
+    // RICE (label 1) — paste your coordinates here
+  ee.Feature(ee.Geometry.Point([
+        76.95,
+        12.48
+    ]),
+    {label: 1, crop: 'Rice'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.91,
+        12.44
+    ]),
+    {label: 1, crop: 'Rice'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.97,
+        12.51
+    ]),
+    {label: 1, crop: 'Rice'
+    }),
+    // add 7 more...
+    // FALLOW (label 2) — paste your coordinates here
+  ee.Feature(ee.Geometry.Point([
+        76.85,
+        12.46
+    ]),
+    {label: 2, crop: 'Fallow'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.93,
+        12.53
+    ]),
+    {label: 2, crop: 'Fallow'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.90,
+        12.58
+    ]),
+    {label: 2, crop: 'Fallow'
+    }),
+    // add 7 more...
+]);
+
+// Visualize points on map
+Map.centerObject(mandya,
+11);
+Map.addLayer(crops,
+{color: 'red'
+}, 'Ground Truth Points');
+print('Total points:', crops.size());
+var mandya = ee.Geometry.Rectangle([
+    76.7,
+    12.3,
+    77.1,
+    12.7
+]);
+
+var crops = ee.FeatureCollection([
+    // SUGARCANE (label 0)
+  ee.Feature(ee.Geometry.Point([
+        76.89,
+        12.52
+    ]),
+    {label: 0, crop: 'Sugarcane'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.92,
+        12.49
+    ]),
+    {label: 0, crop: 'Sugarcane'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.88,
+        12.55
+    ]),
+    {label: 0, crop: 'Sugarcane'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.94,
+        12.51
+    ]),
+    {label: 0, crop: 'Sugarcane'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.87,
+        12.47
+    ]),
+    {label: 0, crop: 'Sugarcane'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.91,
+        12.58
+    ]),
+    {label: 0, crop: 'Sugarcane'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.86,
+        12.53
+    ]),
+    {label: 0, crop: 'Sugarcane'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.93,
+        12.56
+    ]),
+    {label: 0, crop: 'Sugarcane'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.90,
+        12.44
+    ]),
+    {label: 0, crop: 'Sugarcane'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.95,
+        12.59
+    ]),
+    {label: 0, crop: 'Sugarcane'
+    }),
+    // RICE (label 1)
+  ee.Feature(ee.Geometry.Point([
+        76.95,
+        12.48
+    ]),
+    {label: 1, crop: 'Rice'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.91,
+        12.44
+    ]),
+    {label: 1, crop: 'Rice'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.97,
+        12.51
+    ]),
+    {label: 1, crop: 'Rice'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.98,
+        12.46
+    ]),
+    {label: 1, crop: 'Rice'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.96,
+        12.54
+    ]),
+    {label: 1, crop: 'Rice'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        77.00,
+        12.49
+    ]),
+    {label: 1, crop: 'Rice'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.99,
+        12.42
+    ]),
+    {label: 1, crop: 'Rice'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        77.02,
+        12.55
+    ]),
+    {label: 1, crop: 'Rice'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.94,
+        12.40
+    ]),
+    {label: 1, crop: 'Rice'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        77.01,
+        12.43
+    ]),
+    {label: 1, crop: 'Rice'
+    }),
+    // FALLOW (label 2)
+  ee.Feature(ee.Geometry.Point([
+        76.85,
+        12.46
+    ]),
+    {label: 2, crop: 'Fallow'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.93,
+        12.53
+    ]),
+    {label: 2, crop: 'Fallow'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.90,
+        12.58
+    ]),
+    {label: 2, crop: 'Fallow'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.83,
+        12.50
+    ]),
+    {label: 2, crop: 'Fallow'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.80,
+        12.45
+    ]),
+    {label: 2, crop: 'Fallow'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.82,
+        12.38
+    ]),
+    {label: 2, crop: 'Fallow'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.78,
+        12.52
+    ]),
+    {label: 2, crop: 'Fallow'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.84,
+        12.60
+    ]),
+    {label: 2, crop: 'Fallow'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.79,
+        12.41
+    ]),
+    {label: 2, crop: 'Fallow'
+    }),
+  ee.Feature(ee.Geometry.Point([
+        76.81,
+        12.57
+    ]),
+    {label: 2, crop: 'Fallow'
+    }),
+]);
+
+// Visualize points on map
+Map.centerObject(mandya,
+11);
+Map.addLayer(crops,
+{color: 'red'
+}, 'Ground Truth Points');
+print('Total points:', crops.size());
+// ============================================
+// PHASE 2 — Sentinel-2 Image + RF Classifier
+// ============================================
+// Load Sentinel-2 image for Mandya
+var s2 = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
+  .filterBounds(mandya)
+  .filterDate('2025-01-01', '2025-03-31')
+  .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',
+20))
+  .median()
+  .clip(mandya);
+
+// Calculate NDVI and NDWI
+var ndvi = s2.normalizedDifference(['B8', 'B4'
+]).rename('NDVI');
+var ndwi = s2.normalizedDifference(['B3', 'B8'
+]).rename('NDWI');
+
+// Combine all bands + indices
+var image = s2.select(['B2','B3','B4','B8','B11','B12'
+])
+              .addBands(ndvi)
+              .addBands(ndwi);
+
+// ============================================
+// Extract training samples from ground truth
+// ============================================
+var bands = ['B2','B3','B4','B8','B11','B12','NDVI','NDWI'
+];
+
+var training = image.select(bands).sampleRegions({
+  collection: crops,
+  properties: ['label', 'crop'
+    ],
+  scale: 10
+});
+
+print('Training samples:', training.size());
+
+// ============================================
+// Train Random Forest Classifier
+// ============================================
+var classifier = ee.Classifier.smileRandomForest(100).train({
+  features: training,
+  classProperty: 'label',
+  inputProperties: bands
+});
+
+// ============================================
+// Classify the image
+// ============================================
+var cropMap = image.select(bands).classify(classifier);
+
+// Visualize crop map
+Map.addLayer(cropMap,
+{
+  min: 0, max: 2,
+  palette: ['yellow', 'green', 'brown'
+    ]
+}, 'Crop Classification Map');
+
+// ============================================
+// Accuracy Assessment
+// ============================================
+var validated = training.classify(classifier);
+var matrix = validated.errorMatrix('label', 'classification');
+
+print('=== ACCURACY METRICS ===');
+print('Overall Accuracy:', matrix.accuracy());
+print('Kappa Coefficient:', matrix.kappa());
+print('Confusion Matrix:', matrix);
+
+// ============================================
+// Legend info
+// ============================================
+print('Legend: Yellow=Sugarcane | Green=Rice | Brown=Fallow');
+// ============================================
+// PHASE 3 — Phenology / Growth Stage Mapping
+// ============================================
+// Stage 1: Sowing (Oct-Nov 2024)
+var s2_t1 = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
+  .filterBounds(mandya)
+  .filterDate('2024-10-01', '2024-11-30')
+  .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',
+20))
+  .median().clip(mandya);
+
+// Stage 2: Vegetative (Dec 2024 - Jan 2025)
+var s2_t2 = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
+  .filterBounds(mandya)
+  .filterDate('2024-12-01', '2025-01-31')
+  .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',
+20))
+  .median().clip(mandya);
+
+// Stage 3: Flowering/Maturity (Feb-Mar 2025)
+var s2_t3 = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
+  .filterBounds(mandya)
+  .filterDate('2025-02-01', '2025-03-31')
+  .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',
+20))
+  .median().clip(mandya);
+
+// NDVI for each stage
+var ndvi_t1 = s2_t1.normalizedDifference(['B8','B4'
+]).rename('NDVI_Sowing');
+var ndvi_t2 = s2_t2.normalizedDifference(['B8','B4'
+]).rename('NDVI_Vegetative');
+var ndvi_t3 = s2_t3.normalizedDifference(['B8','B4'
+]).rename('NDVI_Flowering');
+
+// Stress thresholds per stage
+// Sowing: NDVI < 0.2 = stress
+// Vegetative: NDVI < 0.4 = stress
+// Flowering: NDVI < 0.5 = stress
+var stress_t1 = ndvi_t1.lt(0.2).rename('Stress_Sowing');
+var stress_t2 = ndvi_t2.lt(0.4).rename('Stress_Vegetative');
+var stress_t3 = ndvi_t3.lt(0.5).rename('Stress_Flowering');
+
+// Visualize NDVI per stage
+var ndviVis = {min: 0, max: 1, palette: ['red','yellow','green'
+    ]
+};
+
+Map.addLayer(ndvi_t1, ndviVis, 'NDVI - Sowing Stage');
+Map.addLayer(ndvi_t2, ndviVis, 'NDVI - Vegetative Stage');
+Map.addLayer(ndvi_t3, ndviVis, 'NDVI - Flowering Stage');
+
+// Visualize stress per stage
+var stressVis = {min: 0, max: 1, palette: ['green','red'
+    ]
+};
+
+Map.addLayer(stress_t1, stressVis, 'Stress - Sowing Stage');
+Map.addLayer(stress_t2, stressVis, 'Stress - Vegetative Stage');
+Map.addLayer(stress_t3, stressVis, 'Stress - Flowering Stage');
+
+// VCI - Vegetation Condition Index
+var ndvi_min = ndvi_t1.min(ndvi_t2).min(ndvi_t3);
+var ndvi_max = ndvi_t1.max(ndvi_t2).max(ndvi_t3);
+var vci = ndvi_t2.subtract(ndvi_min)
+                 .divide(ndvi_max.subtract(ndvi_min))
+                 .multiply(100)
+                 .rename('VCI');
+
+Map.addLayer(vci,
+{min: 0, max: 100, 
+  palette: ['red','orange','yellow','green'
+    ]
+}, 'VCI - Stress Index');
+
+print('=== GROWTH STAGES LOADED ===');
+print('Stage 1: Sowing (Oct-Nov 2024)');
+print('Stage 2: Vegetative (Dec 2024 - Jan 2025)');
+print('Stage 3: Flowering (Feb-Mar 2025)');
+// ============================================
+// PHASE 4 — Water Deficit & Irrigation Advisory
+// ============================================
+// CHIRPS Rainfall data (8-day window)
+var rainfall = ee.ImageCollection('UCSB-CHG/CHIRPS/DAILY')
+  .filterDate('2025-01-01', '2025-01-08')
+  .filterBounds(mandya)
+  .sum()
+  .clip(mandya);
+
+Map.addLayer(rainfall,
+{
+  min: 0, max: 50,
+  palette: ['white','lightblue','blue'
+    ]
+}, 'Rainfall (8-day mm)');
+
+// ============================================
+// Crop Water Requirement (ETc)
+// Sugarcane = 6mm/day → 48mm per 8 days
+// Rice = 7mm/day → 56mm per 8 days
+// Fallow = 1mm/day → 8mm per 8 days
+// ============================================
+// ETc map based on crop classification
+var ETc = cropMap
+  .where(cropMap.eq(0),
+48) // Sugarcane
+  .where(cropMap.eq(1),
+56) // Rice
+  .where(cropMap.eq(2),
+8) // Fallow
+  .rename('ETc_mm');
+
+// Water Deficit = ETc - Rainfall
+var waterDeficit = ETc.subtract(rainfall).rename('Water_Deficit');
+
+// Clamp negatives to 0 (no deficit if rainfall exceeds need)
+waterDeficit = waterDeficit.max(0);
+
+Map.addLayer(waterDeficit,
+{
+  min: 0, max: 56,
+  palette: ['blue','yellow','orange','red'
+    ]
+}, 'Water Deficit Map (mm)');
+
+// ============================================
+// Irrigation Advisory Classification
+// ============================================
+// 0-10mm deficit  → No irrigation needed
+// 10-25mm deficit → Light irrigation
+// 25-40mm deficit → Moderate irrigation
+// 40+ mm deficit  → Urgent irrigation
+
+var irrigationAdvisory = waterDeficit
+  .where(waterDeficit.lte(10),
+0) // No irrigation
+  .where(waterDeficit.gt(10).and(waterDeficit.lte(25)),
+1) // Light
+  .where(waterDeficit.gt(25).and(waterDeficit.lte(40)),
+2) // Moderate
+  .where(waterDeficit.gt(40),
+3) // Urgent
+  .rename('Irrigation_Advisory');
+
+Map.addLayer(irrigationAdvisory,
+{
+  min: 0, max: 3,
+  palette: ['blue','green','orange','red'
+    ]
+}, 'Irrigation Advisory Map');
+
+// ============================================
+// Print summary stats
+// ============================================
+var deficitStats = waterDeficit.reduceRegion({
+  reducer: ee.Reducer.mean().combine(
+    ee.Reducer.min(),
+    null, true).combine(
+    ee.Reducer.max(),
+    null, true),
+  geometry: mandya,
+  scale: 1000,
+  maxPixels: 1e9
+});
+
+print('=== IRRIGATION ADVISORY ===');
+print('Blue  = No Irrigation Needed');
+print('Green = Light Irrigation');
+print('Orange = Moderate Irrigation');
+print('Red   = Urgent Irrigation');
+print('Water Deficit Stats (mm):', deficitStats);
+// ============================================
+// EXPORT MAPS FOR DASHBOARD
+// ============================================
+// Export Crop Classification Map
+Export.image.toDrive({
+  image: cropMap,
+  description: 'Crop_Classification_Mandya',
+  folder: 'ARKTECH_ISRO',
+  scale: 10,
+  region: mandya,
+  maxPixels: 1e9
+});
+
+// Export Irrigation Advisory Map
+Export.image.toDrive({
+  image: irrigationAdvisory,
+  description: 'Irrigation_Advisory_Mandya',
+  folder: 'ARKTECH_ISRO',
+  scale: 10,
+  region: mandya,
+  maxPixels: 1e9
+});
+
+// Export VCI Stress Map
+Export.image.toDrive({
+  image: vci,
+  description: 'VCI_Stress_Mandya',
+  folder: 'ARKTECH_ISRO',
+  scale: 10,
+  region: mandya,
+  maxPixels: 1e9
+});
+
+print('=== EXPORTS STARTED - CHECK TASKS TAB ===');
+// ============================================
+// ADDITION 1 — Sentinel-1 SAR Data
+// ============================================
+
+var sar = ee.ImageCollection('COPERNICUS/S1_GRD')
+  .filterBounds(mandya)
+  .filterDate('2025-01-01', '2025-03-31')
+  .filter(ee.Filter.eq('instrumentMode', 'IW'))
+  .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
+  .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VH'))
+  .select(['VV', 'VH'
+])
+  .mean()
+  .clip(mandya);
+
+// VH/VV Ratio — sensitive to crop structure
+var sarRatio = sar.select('VH').divide(sar.select('VV')).rename('VH_VV_ratio');
+
+// Visualize SAR
+Map.addLayer(sar.select('VV'),
+{min: -20, max: 0
+}, 'SAR — VV Polarization');
+Map.addLayer(sar.select('VH'),
+{min: -25, max: -5
+}, 'SAR — VH Polarization');
+Map.addLayer(sarRatio,
+{min: -1, max: 0, palette: ['brown','yellow','green'
+    ]
+}, 'SAR — VH/VV Ratio');
+
+print('=== SAR LOADED ===');
+print('VV: Sensitive to surface roughness & soil moisture');
+print('VH: Sensitive to crop volume & canopy structure');
+
+// ============================================
+// ADDITION 2 — Soil Moisture Index (SMI)
+// ============================================
+// SMI from SAR VV — wetter soil = higher backscatter
+var smi = sar.select('VV')
+  .unitScale(-25,
+-5)
+  .rename('SMI');
+
+Map.addLayer(smi,
+{
+  min: 0, max: 1,
+  palette: ['red', 'orange', 'yellow', 'green', 'blue'
+    ]
+}, 'Soil Moisture Index (SMI)');
+
+print('=== SMI LOADED ===');
+print('SMI: 0=Dry  |  1=Wet');
+
+// ============================================
+// ADDITION 3 — GLCM Texture Features
+// ============================================
+
+var glcm = s2.select('B8')
+  .toInt()
+  .glcmTexture({size: 3
+});
+
+var contrast = glcm.select('B8_contrast').rename('Contrast');
+var entropy  = glcm.select('B8_ent').rename('Entropy');
+var homog    = glcm.select('B8_idm').rename('Homogeneity');
+
+Map.addLayer(contrast,
+{min: 0, max: 1000, palette: ['white','blue','navy'
+    ]
+}, 'GLCM Contrast');
+Map.addLayer(entropy,
+{min: 0, max: 3,    palette: ['white','green','darkgreen'
+    ]
+}, 'GLCM Entropy');
+
+print('=== GLCM TEXTURE LOADED ===');
+print('Contrast: Measures local variation');
+print('Entropy: Measures disorder/complexity');
+
+// ============================================
+// ADDITION 4 — Retrain RF with ALL Features
+// ============================================
+// Build enhanced image with SAR + Texture
+var imageEnhanced = s2.select(['B2','B3','B4','B8','B11','B12'
+])
+  .addBands(ndvi)
+  .addBands(ndwi)
+  .addBands(sar.select(['VV','VH'
+]))
+  .addBands(sarRatio)
+  .addBands(smi)
+  .addBands(contrast)
+  .addBands(entropy);
+
+var bandsEnhanced = [
+  'B2','B3','B4','B8','B11','B12', // Spectral
+  'NDVI','NDWI', // Optical indices
+  'VV','VH','VH_VV_ratio', // SAR
+  'SMI', // Soil moisture
+  'Contrast','Entropy' // Texture
+];
+
+// ============================================
+// ADDITION 5 — Proper Train/Test Split (70/30)
+// ============================================
+
+var cropsWithRandom = crops.randomColumn('random',
+42); // seed=42 for reproducibility
+var trainSet = cropsWithRandom.filter(ee.Filter.lt('random',
+0.7));
+var testSet  = cropsWithRandom.filter(ee.Filter.gte('random',
+0.7));
+
+print('=== TRAIN/TEST SPLIT ===');
+print('Training set (70%):', trainSet.size());
+print('Test set (30%):', testSet.size());
+
+// Extract training samples
+var trainSamples = imageEnhanced.select(bandsEnhanced).sampleRegions({
+  collection: trainSet,
+  properties: ['label', 'crop'
+    ],
+  scale: 10
+});
+
+// Extract test samples
+var testSamples = imageEnhanced.select(bandsEnhanced).sampleRegions({
+  collection: testSet,
+  properties: ['label', 'crop'
+    ],
+  scale: 10
+});
+
+print('Training samples extracted:', trainSamples.size());
+print('Test samples extracted:', testSamples.size());
+
+// ============================================
+// Train Enhanced Random Forest
+// ============================================
+
+var classifierEnhanced = ee.Classifier.smileRandomForest({
+  numberOfTrees: 100,
+  seed: 42
+}).train({
+  features: trainSamples,
+  classProperty: 'label',
+  inputProperties: bandsEnhanced
+});
+
+// ============================================
+// Classify with enhanced model
+// ============================================
+
+var cropMapEnhanced = imageEnhanced.select(bandsEnhanced).classify(classifierEnhanced);
+
+Map.addLayer(cropMapEnhanced,
+{
+  min: 0, max: 2,
+  palette: ['yellow', 'green', 'brown'
+    ]
+}, 'Enhanced Crop Map (SAR + Optical)');
+
+// ============================================
+// PROPER Validation on TEST SET
+// ============================================
+
+var testValidated = testSamples.classify(classifierEnhanced);
+var testMatrix    = testValidated.errorMatrix('label', 'classification');
+
+print('=== ENHANCED MODEL — TEST SET ACCURACY ===');
+print('Overall Accuracy (Test):', testMatrix.accuracy());
+print('Kappa Coefficient (Test):', testMatrix.kappa());
+print('Confusion Matrix (Test):', testMatrix);
+print('Producers Accuracy:', testMatrix.producersAccuracy());
+print('Consumers Accuracy:', testMatrix.consumersAccuracy());
+
+// ============================================
+// ADDITION 6 — SAR-based Stress Detection
+// ============================================
+// Low VH backscatter = low canopy volume = potential stress
+var sarStress = sar.select('VH').lt(-18).rename('SAR_Stress');
+
+// Combined stress: NDVI stress + SAR stress
+var combinedStress = stress_t2.or(sarStress).rename('Combined_Stress');
+
+Map.addLayer(sarStress,
+{
+  min: 0, max: 1,
+  palette: ['green', 'red'
+    ]
+}, 'SAR-Based Stress');
+
+Map.addLayer(combinedStress,
+{
+  min: 0, max: 1,
+  palette: ['green', 'red'
+    ]
+}, 'Combined Stress (Optical + SAR)');
+
+print('=== SAR STRESS DETECTION ===');
+print('VH < -18 dB = Low canopy volume = Stress detected');
+
+// ============================================
+// Feature Importance (bonus insight)
+// ============================================
+
+var importance = ee.Dictionary(classifierEnhanced.explain().get('importance'));
+print('=== FEATURE IMPORTANCE ===', importance);
+// ============================================
+// ADDITION 7 — Pest Risk Detection (Red-Edge + Climatic)
+// ============================================
+// 7a. Red-Edge index — more sensitive to early pest/disease stress than NDVI
+var ndre = s2.normalizedDifference(['B8', 'B5'
+]).rename('NDRE');
+Map.addLayer(ndre,
+{min: 0, max: 0.6, palette: ['red','yellow','green'
+    ]
+}, 'NDRE (Pest/Disease Sensitivity)');
+
+// Early signature: canopy structure (NDVI) still fine, but chlorophyll (NDRE) dropping
+var pestSignature = ndre.lt(0.25).and(ndvi.gt(0.4)).rename('Pest_Signature');
+Map.addLayer(pestSignature,
+{min: 0, max: 1, palette: ['green','orange'
+    ]
+}, 'Possible Pest/Disease Signature');
+
+// 7b. Climatic Pest Risk — temp + humidity favorability (ERA5-Land)
+var era5 = ee.ImageCollection('ECMWF/ERA5_LAND/DAILY_AGGR')
+  .filterDate('2025-01-01', '2025-01-08')
+  .filterBounds(mandya);
+
+var temp = era5.select('temperature_2m').mean().subtract(273.15).rename('Temp_C').clip(mandya);
+var dewpoint = era5.select('dewpoint_temperature_2m').mean().subtract(273.15).rename('Dewpoint_C').clip(mandya);
+
+// Magnus formula approximation for relative humidity
+var rh = dewpoint.multiply(17.625).divide(dewpoint.add(243.04)).exp()
+  .divide(temp.multiply(17.625).divide(temp.add(243.04)).exp())
+  .multiply(100).rename('RH_percent');
+
+Map.addLayer(temp,
+{min: 15, max: 40, palette: ['blue','yellow','red'
+    ]
+}, 'Temperature (°C)');
+Map.addLayer(rh,
+{min: 0, max: 100, palette: ['brown','yellow','blue'
+    ]
+}, 'Relative Humidity (%)');
+
+// Most rice/sugarcane pests (brown planthopper, stem borer) favor 25-30°C + >80% RH
+var pestRisk = temp.gte(25).and(temp.lte(30)).and(rh.gte(80)).rename('Pest_Risk_Climatic');
+Map.addLayer(pestRisk,
+{min: 0, max: 1, palette: ['white','red'
+    ]
+}, 'Climatic Pest Risk Zone');
+
+var combinedPestRisk = pestSignature.or(pestRisk).rename('Combined_Pest_Risk');
+Map.addLayer(combinedPestRisk,
+{min: 0,max: 1, palette: ['green','red'
+    ]
+}, 'Combined Pest Risk Map');
+// ============================================
+// ADDITION 8 — Unpredictable Weather / Anomaly Detection
+// ============================================
+
+var currentRain = ee.ImageCollection('UCSB-CHG/CHIRPS/DAILY')
+  .filterDate('2025-01-01', '2025-01-08').filterBounds(mandya).sum().clip(mandya);
+
+var historicalRain = ee.ImageCollection('UCSB-CHG/CHIRPS/DAILY')
+  .filterDate('2020-01-01', '2025-01-08')
+  .filter(ee.Filter.calendarRange(1,
+8, 'day_of_year'))
+  .filterBounds(mandya).mean().clip(mandya);
+
+var rainAnomaly = currentRain.subtract(historicalRain).rename('Rain_Anomaly_mm');
+Map.addLayer(rainAnomaly,
+{min: -30, max: 30, palette: ['red','white','blue'
+    ]
+}, 'Rainfall Anomaly (Red=Dry, Blue=Excess)');
+
+var drySpellFlag = rainAnomaly.lt(-15).rename('Dry_Spell_Alert');
+var excessRainFlag = rainAnomaly.gt(15).rename('Excess_Rain_Alert');
+Map.addLayer(drySpellFlag,
+{min: 0,max: 1,palette: ['white','orange'
+    ]
+}, 'Dry Spell Alert');
+Map.addLayer(excessRainFlag,
+{min: 0,max: 1,palette: ['white','blue'
+    ]
+}, 'Excess Rain Alert');
+
+// Temperature volatility — day-to-day swing over the week
+var tempDaily = era5.select('temperature_2m').map(function(img){
+  return img.subtract(273.15).copyProperties(img,
+    ['system:time_start'
+    ]);
+});
+var tempStdDev = tempDaily.reduce(ee.Reducer.stdDev()).rename('Temp_Volatility').clip(mandya);
+Map.addLayer(tempStdDev,
+{min: 0, max: 5, palette: ['green','yellow','red'
+    ]
+}, 'Temperature Volatility');
+
+print('=== WEATHER UNPREDICTABILITY ===');
+print('Rain anomaly: current vs 5-year historical average for same window');
+print('Temp volatility: higher week-to-week swing = less predictable conditions');
+// ============================================
+// ADDITION 9 — Unified Risk Advisory (Water + Pest + Weather)
+// ============================================
+
+var weatherAlert = drySpellFlag.or(excessRainFlag);
+
+var unifiedRisk = irrigationAdvisory
+  .add(combinedPestRisk.multiply(2))
+  .add(weatherAlert.multiply(1))
+  .rename('Unified_Risk_Score');
+
+Map.addLayer(unifiedRisk,
+{
+  min: 0, max: 6,
+  palette: ['blue','green','yellow','orange','red','darkred'
+    ]
+}, 'Unified Risk Score');
+
+print('=== UNIFIED RISK ===');
+print('0-1: Low | 2-3: Monitor | 4-5: Action needed | 6: Urgent multi-factor alert');
+// ============================================
+// ARKTECH - DEEP LEARNING DATA PREPARATION
+// ============================================
+// Input bands for Deep Learning
+
+var bandsDL = [
+  'B2', 'B3', 'B4', 'B8', 'B11', 'B12',
+  'NDVI', 'NDWI',
+  'VV', 'VH',
+  'SMI',
+  'Contrast', 'Entropy'
+];
+
+// ============================================
+// ARKTECH - DEEP LEARNING DATA PREPARATION
+// ============================================
+
+var bandsDL = [
+  'B2', 'B3', 'B4', 'B8', 'B11', 'B12',
+  'NDVI', 'NDWI',
+  'VV', 'VH',
+  'SMI',
+  'Contrast', 'Entropy'
+];
+
+var imageDL = s2.select([
+  'B2', 'B3', 'B4', 'B8', 'B11', 'B12'
+])
+.addBands(ndvi)
+.addBands(ndwi)
+.addBands(sar.select(['VV', 'VH'
+]))
+.addBands(smi)
+.addBands(contrast)
+.addBands(entropy)
+.select(bandsDL)
+.toFloat()
+.clip(mandya);
+
+print('Deep Learning Bands:', imageDL.bandNames());
+print('Number of bands:', imageDL.bandNames().size());
+print('Data types:', imageDL.bandTypes());
+
+Map.addLayer(
+  imageDL.select('NDVI'),
+{min: 0, max: 1, palette: ['red', 'yellow', 'green'
+    ]
+},
+  'Deep Learning NDVI'
+);
+
+print('Deep Learning Bands:', bandsDL);
+print('Number of bands:', imageDL.bandNames().size());
+
+Map.addLayer(
+  imageDL.select('NDVI'),
+{min: 0, max: 1, palette: ['red', 'yellow', 'green'
+    ]
+},
+  'Deep Learning NDVI'
+);
+// ============================================
+// EXPORT SATELLITE DATA
+// ============================================
+
+Export.image.toDrive({
+  image: imageDL,
+  description: 'ARKTECH_DL_Satellite_Data',
+  folder: 'ARKTECH_DEEP_LEARNING',
+  fileNamePrefix: 'Satellite_Data_Mandya',
+  region: mandya,
+  scale: 10,
+  maxPixels: 1e10,
+  fileFormat: 'GeoTIFF'
+});
+// ============================================
+// EXPORT CROP TRAINING DATA
+// ============================================
+
+var dlSamples = imageDL.sampleRegions({
+  collection: crops,
+  properties: ['label', 'crop'
+    ],
+  scale: 10,
+  tileScale: 4
+});
+
+print('Deep Learning Training Samples:', dlSamples.size());
+
+Export.table.toDrive({
+  collection: dlSamples,
+  description: 'ARKTECH_DL_Training_Data',
+  folder: 'ARKTECH_DEEP_LEARNING',
+  fileNamePrefix: 'Crop_Training_Data',
+  fileFormat: 'CSV'
+});
